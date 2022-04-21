@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #232f3d;
+  padding: 12px;
+  
+  &__link {
+    color: #fff;
+    margin-right: 12px;
+  }
+}
+
+.container {
+  background-color: #f2f3f3;
+  flex: 1;
+}
