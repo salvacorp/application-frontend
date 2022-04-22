@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-import { Icon } from '../Icon';
+import { Button } from '../Button';
 
 import styles from "./Layout.module.scss";
 
@@ -12,9 +12,18 @@ const Layout = ({ children }: Props): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
-        <Icon name="apps" />
-        <Link className={styles.header__link} to="/">Home</Link>
-        <Link className={styles.header__link} to="/candidates">Candidates</Link>
+        <div className={styles['header__first-col']}>
+          <p className={styles['header__first-col__title']}>ATS</p>
+          
+          <span className={styles.divider}>|</span>
+          
+          <Button title="menu" icon="apps" />
+        </div>
+
+        <div><Button title="user" icon="angleDown" /></div>
+
+        {/* <Link className={styles.header__link} to="/">Home</Link>
+        <Link className={styles.header__link} to="/candidates">Candidates</Link> */}
       </header>
 
       <div className={styles.container}>

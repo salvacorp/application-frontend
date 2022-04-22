@@ -1,3 +1,9 @@
+import { IconName } from '../../components';
 import apps from './apps.svg';
+import angleDown from './angle-down.svg';
 
-export const ICONS = { apps };
+type IconType = {
+  [n in IconName]: any;
+};
+
+export const ICONS: IconType = { apps, angleDown };

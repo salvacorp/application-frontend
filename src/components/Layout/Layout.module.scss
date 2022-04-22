@@ -5,13 +5,32 @@
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
   background-color: #232f3d;
   padding: 12px;
   
-  &__link {
-    color: #fff;
-    margin-right: 12px;
+  &__first-col{
+    display: flex;
+    align-items: center;
+
+    &__title{
+      color: white;
+    }
+    
+    &__link {
+      color: #fff;
+      margin-right: 12px;
+    }
   }
+  
+}
+
+.divider{
+  color: white;
+  margin: 0 18px;
 }
 
 .container {

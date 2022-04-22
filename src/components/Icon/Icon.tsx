@@ -1,7 +1,9 @@
 import { ICONS } from '../../assets/icons';
 
+export type IconName = 'apps' | 'angleDown';
+
 type Props = {
-  name: 'apps'
+  name: IconName;
 };
 
 const Icon = ({ name }: Props): JSX.Element => {
