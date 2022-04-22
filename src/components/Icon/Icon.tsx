@@ -1,7 +1,7 @@
 import { ICONS } from '../../assets/icons';
 import styles from './Icon.module.scss';
 
-export type IconName = 'apps' | 'angleDown';
+export type IconName = 'apps' | 'angleDown' | 'bell' | 'interrogation';
 
 type Props = {
   name: IconName;

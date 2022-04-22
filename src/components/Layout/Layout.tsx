@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from '../Button';
+import { Divider } from "../Divider";
+import { Icon } from "../Icon";
 
 import styles from "./Layout.module.scss";
 
@@ -17,10 +19,9 @@ const Layout = ({ children }: Props): JSX.Element => {
     <div className={styles.wrapper}>
       <header className={styles.header}>
         <div className={styles['header__first-col']}>
-          {/* <p className={styles['header__first-col__title']}>ATS</p> */}
-            <Link className={styles['header__first-col__title']} to="/">ATS</Link>
+          <Link className={styles['header__first-col__title']} to="/">ATS</Link>
           
-          <span className={styles.divider}>|</span>
+          <Divider />
 
           <div>
             <Button title="menu" icon="apps" onClick={toggleApps} />
@@ -34,8 +35,16 @@ const Layout = ({ children }: Props): JSX.Element => {
           </div>
         </div>
 
-        <div>
-          <Button title="user name" icon="angleDown" rightIcon />
+        <div className={styles['header__second-col']}>
+          <Icon name="bell" />
+
+          <Divider />
+
+          <Icon name="interrogation" />
+
+          <Divider />
+
+          <Button title="user name @ group" icon="angleDown" rightIcon />
         </div>
 
       </header>

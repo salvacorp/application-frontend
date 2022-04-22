@@ -30,12 +30,11 @@
       margin-right: 12px;
     }
   }
-  
-}
 
-.divider{
-  color: white;
-  margin: 0 18px;
+  &__second-col{
+    display: flex;
+    align-items: center;
+  }
 }
 
 .container {
