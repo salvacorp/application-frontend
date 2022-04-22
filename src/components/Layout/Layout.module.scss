@@ -10,14 +10,19 @@
   justify-content: space-between;
   
   background-color: #232f3d;
-  padding: 12px;
+  padding: 12px 24px;
   
+  border-bottom: 1px solid #545B64;
+
   &__first-col{
     display: flex;
     align-items: center;
 
     &__title{
       color: white;
+      margin: 0;
+      text-decoration: none;
+      font-weight: 600;
     }
     
     &__link {
@@ -36,4 +41,40 @@
 .container {
   background-color: #f2f3f3;
   flex: 1;
+}
+
+.apps-box {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 41px;
+  left: 70px;
+  
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+
+  -webkit-box-shadow: 2px 2px 4px rgb(0 0 0 / 40%), inset 0px 1px 0px #414750 !important;
+  box-shadow: 2px 2px 4px rgb(0 0 0 / 40%), inset 0px 1px 0px #414750 !important;
+    
+  background: #232f3e;
+  border: 1px solid #1b2530;
+
+  padding: 24px;
+
+  & > a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-weight: bold;
+
+    &:hover {
+      color: #EC7211
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
 }

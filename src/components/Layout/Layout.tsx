@@ -1,5 +1,5 @@
-// import { Link } from "react-router-dom";
-
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from '../Button';
 
 import styles from "./Layout.module.scss";
@@ -9,21 +9,35 @@ type Props = {
 };
 
 const Layout = ({ children }: Props): JSX.Element => {
+  const [showApps, setShowApps] = useState(false);
+
+  const toggleApps = (): void => setShowApps(!showApps);
+
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
         <div className={styles['header__first-col']}>
-          <p className={styles['header__first-col__title']}>ATS</p>
+          {/* <p className={styles['header__first-col__title']}>ATS</p> */}
+            <Link className={styles['header__first-col__title']} to="/">ATS</Link>
           
           <span className={styles.divider}>|</span>
-          
-          <Button title="menu" icon="apps" />
+
+          <div>
+            <Button title="menu" icon="apps" onClick={toggleApps} />
+            {
+              showApps && (
+                <div className={styles['apps-box']}>
+                  <Link className={styles.header__link} to="/candidates">Candidates</Link>
+                </div>
+              )
+            }
+          </div>
         </div>
 
-        <div><Button title="user" icon="angleDown" /></div>
+        <div>
+          <Button title="user name" icon="angleDown" rightIcon />
+        </div>
 
-        {/* <Link className={styles.header__link} to="/">Home</Link>
-        <Link className={styles.header__link} to="/candidates">Candidates</Link> */}
       </header>
 
       <div className={styles.container}>
