@@ -4,3 +4,4 @@ export * from './Icon';
 export * from './Divider';
 export * from './DropdownMenu';
 export * from './Button';
+export * from './Input';
