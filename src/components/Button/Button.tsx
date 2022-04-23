@@ -1,23 +1,26 @@
 import { Icon, IconName } from "../Icon";
 import styles from './Button.module.scss';
+import cn from 'classnames';
 
 type Props = {
-  title: string;
+  title?: string;
   onClick?: () => void;
-  icon: IconName;
+  icon?: IconName | undefined;
   rightIcon?: boolean;
 };
 
 const Button = ({ title, onClick, icon, rightIcon = false }: Props): JSX.Element => {
   const elements = [
     icon && <Icon name={icon} />,
-    <button className={styles.button}>{title}</button>
+    title && <span className={cn(styles.title, {
+      [styles['title--right-icon']]: rightIcon,
+    })}>{title}</span>,
   ]
 
   return (
-    <div className={styles.wrapper} onClick={onClick}>
+    <button onClick={onClick} className={styles.button}>
       {rightIcon ? elements.reverse() : elements}
-    </div>
+    </button>
   )
 };
 

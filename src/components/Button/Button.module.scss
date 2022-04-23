@@ -1,15 +1,18 @@
-.wrapper {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
 .button {
+  display: flex;
   cursor: pointer;
   background-color: unset;
   border: none;
   color: white;
   line-height: 16px;
   font-size: 14px;
-  margin: 0 4px;
+}
+
+.title {
+  margin-left: 8px;
+
+  &--right-icon {
+    margin-left: 0;
+    margin-right: 8px;
+  }
 }
