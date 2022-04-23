@@ -1,0 +1,10 @@
+.wrapper {
+  padding: 0 48px;
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+  column-gap: 32px;
+}
