@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  background-color: #232f3d;
+  padding: 12px 24px;
+  
+  border-bottom: 1px solid #545B64;
+}
+
+.first-col{
+  display: flex;
+  align-items: center;
+
+  &__title{
+    color: white;
+    margin: 0;
+    text-decoration: none;
+    font-weight: 600;
+
+    @media screen and (max-width: 768px){
+      display: none;
+    }
+  }
+  
+  &__link {
+    color: #fff;
+    margin-right: 12px;
+  }
+}
+
+.second-col{
+  display: flex;
+  align-items: center;
+}
+
+.hide-on-mobile {
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+}

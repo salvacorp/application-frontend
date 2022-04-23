@@ -1,0 +1,50 @@
+.wrapper {
+  position: relative;
+}
+
+.button--selected {
+  color: #EC7211;
+}
+
+.icon--selected {
+  fill: #EC7211;
+}
+
+.menu-box {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 30px;
+  
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+
+  -webkit-box-shadow: 2px 2px 4px rgb(0 0 0 / 40%), inset 0px 1px 0px #414750 !important;
+  box-shadow: 2px 2px 4px rgb(0 0 0 / 40%), inset 0px 1px 0px #414750 !important;
+    
+  background: #232f3e;
+  border: 1px solid #1b2530;
+
+  padding: 24px;
+
+  & > a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-weight: bold;
+
+    &:hover {
+      color: #EC7211
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.link {
+  color: #fff;
+  margin-right: 12px;
+}
