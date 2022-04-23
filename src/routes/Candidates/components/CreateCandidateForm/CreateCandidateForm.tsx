@@ -7,21 +7,21 @@ type Props = {};
 const CreateCandidateForm = ({}: Props): JSX.Element => {
   return (
     <div className={styles.wrapper}>
-      <form action="">
+      <form className={styles.form} action="">
         <h4>Personal Info</h4>
 
         <div className={styles['two-cols']}>
           <Input label="name" />
           <Input label="last name" />
-          <Input label="birth" />
+          <Input label="birth" type="date" />
         </div>
 
         <h4>Contact Info</h4>
 
         <div className={styles['two-cols']}>
-          <Input label="phone" />
-          <Input label="email" />
-          <Input label="linkedin" />
+          <Input label="phone" type="phone" />
+          <Input label="email" type="email" />
+          <Input label="linkedin" type="url" />
         </div>
 
         <h4>Career</h4>

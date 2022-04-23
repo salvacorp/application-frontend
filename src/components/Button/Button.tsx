@@ -9,18 +9,19 @@ type Props = {
   rightIcon?: boolean;
   className?: string;
   iconClassName?: string;
+  theme?: 'clean'
 };
 
-const Button = ({ title, onClick, icon, rightIcon = false, className, iconClassName }: Props): JSX.Element => {
+const Button = ({ title, onClick, icon, rightIcon = false, className, iconClassName, theme }: Props): JSX.Element => {
   const elements = [
-    icon && <Icon name={icon} className={iconClassName} />,
+    icon && <Icon name={icon} className={cn(styles.icon, iconClassName)} />,
     title && <span className={cn(styles.title, {
       [styles['title--right-icon']]: rightIcon,
     })}>{title}</span>,
   ]
 
   return (
-    <button onClick={onClick} className={cn(styles.button, className)}>
+    <button onClick={onClick} className={cn(styles.button, className, { [styles['button--clean']] : theme === 'clean' })}>
       {rightIcon ? elements.reverse() : elements}
     </button>
   )

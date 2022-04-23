@@ -49,6 +49,7 @@ const DropdownMenu = ({ title, icon, links, rightIcon, className }: Props): JSX.
         iconClassName={cn({
           [styles["icon--selected"]]: showMenu,
         })}
+        theme="clean"
       />
       {showMenu && (
         <div ref={dropdownRef} className={styles["menu-box"]}>
