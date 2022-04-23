@@ -6,9 +6,7 @@ import { DropdownMenu } from "../DropdownMenu";
 
 import styles from "./Navbar.module.scss";
 
-type Props = {};
-
-const Navbar = ({}: Props): JSX.Element => {
+const Navbar = (): JSX.Element => {
   return (
     <nav className={styles.wrapper}>
       <div className={styles["first-col"]}>

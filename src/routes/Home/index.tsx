@@ -1,8 +1,6 @@
 import { Layout } from "../../components";
 
-type Props = {};
-
-const Home = ({}: Props): JSX.Element => {
+const Home = (): JSX.Element => {
   return (
     <Layout>
       <h2>Home</h2>
