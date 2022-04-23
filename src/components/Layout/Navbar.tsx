@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { isMobile } from "react-device-detect";
+import cn from 'classnames';
 
 import { Divider } from "../Divider";
 import { DropdownMenu } from "../DropdownMenu";
@@ -12,18 +12,14 @@ const Navbar = ({}: Props): JSX.Element => {
   return (
     <nav className={styles.wrapper}>
       <div className={styles["first-col"]}>
-        {!isMobile && (
-          <>
-            <Link className={styles["first-col__title"]} to="/">
-              ATS
-            </Link>
+        <Link className={cn(styles["first-col__title"], styles['hide-on-mobile'])} to="/">
+          ATS
+        </Link>
 
-            <Divider />
-          </>
-        )}
+        <Divider className={styles['hide-on-mobile']} />
 
         <DropdownMenu
-          title={isMobile ? undefined : "menu"}
+          title="menu"
           icon="apps"
           links={[
             { title: "Candidates", to: "/candidates" },
@@ -31,24 +27,24 @@ const Navbar = ({}: Props): JSX.Element => {
             { title: "Interviews", to: "/" },
           ]}
         />
-
-        <Divider />
       </div>
 
       <div className={styles["second-col"]}>
         <DropdownMenu
           icon="bell"
           links={[{ title: "Send Feedback", to: "/" }]}
+          className={styles['hide-on-mobile']}
         />
 
-        <Divider />
+        <Divider className={styles['hide-on-mobile']} />
 
         <DropdownMenu
           icon="interrogation"
           links={[{ title: "Help", to: "/" }]}
+          className={styles['hide-on-mobile']}
         />
 
-        <Divider />
+        <Divider className={styles['hide-on-mobile']} />
 
         <DropdownMenu
           title="s@salva.io"

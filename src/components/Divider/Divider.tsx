@@ -1,10 +1,14 @@
+import cn from "classnames";
+
 import styles from './Divider.module.scss';
 
-type Props = {};
+type Props = {
+  className?: string;
+};
 
-const Divider = ({}: Props): JSX.Element => {
+const Divider = ({ className}: Props): JSX.Element => {
   return (
-    <div className={styles.wrapper}>|</div>
+    <div className={cn(styles.wrapper, className)}>|</div>
   )
 };
 

@@ -12,9 +12,10 @@ type Props = {
   icon?: IconName;
   links: { title: string; to: string }[];
   rightIcon?: boolean;
+  className?: string;
 };
 
-const DropdownMenu = ({ title, icon, links, rightIcon }: Props): JSX.Element => {
+const DropdownMenu = ({ title, icon, links, rightIcon, className }: Props): JSX.Element => {
   const [showMenu, setShowMenu] = useState(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -36,7 +37,7 @@ const DropdownMenu = ({ title, icon, links, rightIcon }: Props): JSX.Element => 
   }, []);
 
   return (
-    <div className={styles.wrapper}>
+    <div className={cn(styles.wrapper, className)}>
       <Button
         title={title}
         icon={icon}
