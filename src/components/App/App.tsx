@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Home, Candidates } from '../../routes';
+import { Home, HomeCandidates, CreateCandidate } from '../../routes';
 
 function App() {
   return (
@@ -12,7 +12,8 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
-          <Route path="candidates" element={<Candidates />} />
+          <Route path="candidates" element={<HomeCandidates />} />
+          <Route path="candidates/create" element={<CreateCandidate />} />
         </Route>
       </Routes>
     </BrowserRouter>
