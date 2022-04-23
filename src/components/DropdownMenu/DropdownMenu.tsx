@@ -23,8 +23,8 @@ const DropdownMenu = ({ title, icon, links, rightIcon, className }: Props): JSX.
   const toggleApps = (): void => setShowMenu(!showMenu);
 
   useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (!dropdownRef.current?.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!dropdownRef.current?.contains(event.target as Node)) {
         setShowMenu(false);
       }
     };
