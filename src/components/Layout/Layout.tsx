@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { Button } from '../Button';
 import { Divider } from "../Divider";
-import { Icon } from "../Icon";
 import { DropdownMenu } from "../DropdownMenu";
 
 import styles from "./Layout.module.scss";
@@ -25,12 +23,15 @@ const Layout = ({ children }: Props): JSX.Element => {
           <DropdownMenu
             title="menu"
             icon="apps"
-            links={[{ title: "Candidates", to: "/candidates" }]}
+            links={[
+              { title: "Candidates", to: "/candidates" },
+              { title: "Requisitions", to: "/" },
+              { title: "Interviews", to: "/" },
+            ]}
           />
         </div>
 
         <div className={styles["header__second-col"]}>
-          {/* <Icon name="bell" /> */}
           <DropdownMenu
             icon="bell"
             links={[{ title: "Send Feedback", to: "/" }]}
@@ -38,11 +39,21 @@ const Layout = ({ children }: Props): JSX.Element => {
 
           <Divider />
 
-          <Icon name="interrogation" />
+          <DropdownMenu
+            icon="interrogation"
+            links={[{ title: "Help", to: "/" }]}
+          />
 
           <Divider />
 
-          <Button title="s@salva.io" icon="angleDown" rightIcon />
+          <DropdownMenu
+            title="s@salva.io" icon="angleDown" rightIcon
+            links={[
+              { title: "Settings", to: "/" },
+              { title: "Account", to: "/" },
+              { title: "LogOut", to: "/" },
+            ]}
+          />
         </div>
       </header>
 

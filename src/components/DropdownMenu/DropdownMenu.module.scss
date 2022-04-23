@@ -2,7 +2,15 @@
   position: relative;
 }
 
-.apps-box {
+.button--selected {
+  color: #EC7211;
+}
+
+.icon--selected {
+  fill: #EC7211;
+}
+
+.menu-box {
   display: flex;
   flex-direction: column;
 
