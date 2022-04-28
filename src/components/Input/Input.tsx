@@ -5,9 +5,10 @@ type Props = {
   label?: string;
   type?: string;
   placeholder?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input = ({ label, type = "text", placeholder }: Props): JSX.Element => {
+const Input = ({ label, type = "text", placeholder, onChange }: Props): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
@@ -21,6 +22,7 @@ const Input = ({ label, type = "text", placeholder }: Props): JSX.Element => {
         ref={inputRef}
         type={type}
         placeholder={placeholder}
+        onChange={onChange}
       />
     </div>
   );

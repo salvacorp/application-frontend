@@ -14,8 +14,8 @@ type Props = {
 
 const Button = ({ title, onClick, icon, rightIcon = false, className, iconClassName, theme }: Props): JSX.Element => {
   const elements = [
-    icon && <Icon name={icon} className={cn(styles.icon, iconClassName)} />,
-    title && <span className={cn(styles.title, {
+    icon && <Icon key="icon" name={icon} className={cn(styles.icon, iconClassName)} />,
+    title && <span key="title" className={cn(styles.title, {
       [styles['title--right-icon']]: rightIcon,
     })}>{title}</span>,
   ]
