@@ -1,17 +1,14 @@
+import { ChangeEvent } from 'react';
 import { Button, Input } from '../../../../components'
-import { useForms } from '../../../../hooks'
 
 import styles from './CreateCandidateForm.module.scss';
 
-type Props = {};
+type Props = {
+  handelSubmit: () => void;
+  handleInputChange: (s: string) => (event: ChangeEvent<HTMLInputElement>) => void;
+};
 
-const CreateCandidateForm = ({}: Props): JSX.Element => {
-  const { handleInputChange, data } = useForms();
-
-  const handelSubmit = () => {
-    console.log({ data})
-  }
-
+const CreateCandidateForm = ({ handelSubmit, handleInputChange }: Props): JSX.Element => {
   return (
     <div className={styles.wrapper}>
       <form className={styles.form} action="">

@@ -1,10 +1,10 @@
 import { useQuery } from "react-query";
-import { getPosts } from "../../services/candidates";
+import { getCandidates } from "../../services/candidates";
 
 const useHomeCandidate = () => {
 
   function usePost() {
-    return useQuery(["posts"], () => getPosts(), {
+    return useQuery(["posts"], () => getCandidates(), {
       enabled: true,
     });
   }
