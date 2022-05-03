@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Table, Space } from "antd";
+
 import { Layout } from "../../components";
 import { Candidate } from "../../types/Candidate";
 import { useHomeCandidate } from "./useHomeCandidate";
@@ -6,11 +8,47 @@ import { useHomeCandidate } from "./useHomeCandidate";
 const HomeCandidates = (): JSX.Element => {
   const { data = [] }: any = useHomeCandidate();
 
+  const columns = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Laste Name",
+      dataIndex: "last",
+      key: "last",
+    },
+    {
+      title: "Birthday",
+      dataIndex: "birthday",
+      key: "birthday",
+    },
+    {
+      title: "Phone",
+      dataIndex: "phone",
+      key: "phone",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
+    },
+    {
+      title: "Action",
+      key: "action",
+      render: (text: string, record: Candidate) => (
+        <Space size="middle">
+          <a href="/#">edit</a>
+          <a href="/#">delete</a>
+        </Space>
+      ),
+    },
+  ];
+
   return (
     <Layout>
       <h2>Candidates</h2>
-
-      {data.Items?.map((candidate: Candidate) => <p>{candidate.name}</p>)}
 
       <Link
         to="/candidates/create"
@@ -25,11 +63,13 @@ const HomeCandidates = (): JSX.Element => {
         + add candidate
       </Link>
 
-      <ul>
-        {(data?.data || []).map((todo: { id: string; name: string }) => (
-          <li key={todo.id}>{todo.name}</li>
-        ))}
-      </ul>
+      <Table
+        columns={columns}
+        dataSource={data.Items?.map((candidate: Candidate, key: number) => ({
+          ...candidate,
+          key,
+        }))}
+      />
     </Layout>
   );
 };
