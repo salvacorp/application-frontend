@@ -28,8 +28,8 @@ const CandidatesTable = ({ data }: Props): JSX.Element => {
     },
     {
       title: "Birthday",
-      dataIndex: "birthday",
-      key: "birthday",
+      dataIndex: "birth",
+      key: "birth",
     },
     {
       title: "Phone",
