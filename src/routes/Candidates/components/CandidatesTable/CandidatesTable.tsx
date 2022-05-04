@@ -1,5 +1,6 @@
-import { Space, Table } from "antd";
+import { Button, Space, Table } from "antd";
 import { Candidate } from "../../../../types/Candidate";
+import { useNavigate } from "react-router-dom";
 
 import styles from './CandidatesTable.module.scss';
 
@@ -8,6 +9,12 @@ type Props = {
 };
 
 const CandidatesTable = ({ data }: Props): JSX.Element => {
+  const navigate = useNavigate();
+
+  const handleEdit = (candidate: Candidate) => {
+    navigate('/candidates/create', { state: { candidate } });
+  }
+
   const columns = [
     {
       title: "Name",
@@ -37,9 +44,9 @@ const CandidatesTable = ({ data }: Props): JSX.Element => {
     {
       title: "Action",
       key: "action",
-      render: (text: string, record: Candidate) => (
+      render: (text: string, candidate: Candidate) => (
         <Space size="middle">
-          <a href="/#">edit</a>
+          <Button onClick={() => handleEdit(candidate)}>edit</Button>
           <a href="/#">delete</a>
         </Space>
       ),
